@@ -33,7 +33,7 @@ int main()
     //     cout << endl;
     // }
 
-    // int num,n,m;
+    // int num,m,n;
     // cout << "Enter an Integer : " << endl;
     // cin >> num;
     // cout<<endl;    
@@ -46,26 +46,39 @@ int main()
     //     cout<<endl;
     // }
 
-    int num1, o, n;
-    cout << "Enter an Integer : " << endl;
-    cin >> num1;
-    cout << endl;
-    for (o = 1; o <= num1; o++)
-    {
-        for (n = 1; n <= num1; n++)
-        {
-            if (n <= num1 - o)
-            {
-                cout << "  ";
-            }
-            else
-            {
-                cout << "* ";
-            }
-        }
-        cout << endl;
-    }
+    // int num1, o, p;
+    // cout << "Enter an Integer : " << endl;
+    // cin >> num1;
+    // cout << endl;
+    // for (o = 1; o <= num1; o++)
+    // {
+    //     for (n = 1; n <= num1; p++)
+    //     {
+    //         if (p <= num1 - o)
+    //         {
+    //             cout << "  ";
+    //         }
+    //         else
+    //         {
+    //             cout << "* ";
+    //         }
+    //     }
+    //     cout << endl;
+    // }
 
+    // int num2,q,r;
+    // cout << "Enter an Integer : " << endl;
+    // cin >> num2;
+    // cout<<endl;    
+    // for ( q = 1; q <= num2; q++)
+    // {
+    //     for ( r = 1; r <= q; r++)
+    //     {
+    //         cout<<q ;
+    //     }
+    //     cout<<endl;
+    // }
+    
     
 
 
