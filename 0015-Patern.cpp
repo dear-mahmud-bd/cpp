@@ -2,6 +2,7 @@
 using namespace std;
 int main()
 {
+    // Row and Col print
     int col, row, i, j;
     cout << "Enter Coloum and Row : " << endl;
     cin >> col >> row;
@@ -14,6 +15,7 @@ int main()
         cout << endl;
     }
 
+    // Hollow pattern
     int col1, row1, k, l;
     cout << "Enter Coloum and Row : " << endl;
     cin >> col1 >> row1;
@@ -33,6 +35,7 @@ int main()
         cout << endl;
     }
 
+    // half piramid
     int num,m,n;
     cout << "Enter an Integer : " << endl;
     cin >> num;
@@ -46,6 +49,7 @@ int main()
         cout<<endl;
     }
 
+    // half piramid (right side alignment)
     int num1, o, p;
     cout << "Enter an Integer : " << endl;
     cin >> num1;
@@ -66,6 +70,7 @@ int main()
         cout << endl;
     }
 
+    // half piramid with Number
     int num2,q,r;
     cout << "Enter an Integer : " << endl;
     cin >> num2;
@@ -79,6 +84,7 @@ int main()
         cout<<endl;
     }
     
+    // half pitamid with 1,2,3,4,5,6,7,...
     int num3,s,t,count=1;
     cout << "Enter an Integer : " << endl;
     cin >> num3;
@@ -93,6 +99,7 @@ int main()
         cout<<endl;
     }
     
+    // butter fly pattern
     int num4,u,v;
     cout<<"Enter an Integer : "<<endl;
     cin>>num4;
