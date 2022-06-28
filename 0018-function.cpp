@@ -24,6 +24,16 @@ void fibonacci(int n){
     }
     return;
 }
+// factorial ...
+int fact(int number){
+    int mul=1;
+    for (int i = 1; i <= number; i++)
+    {
+        mul=mul*i;
+    }
+    return mul;
+}
+
 int main(){
     // Check Prime number ...
     int a,b;
@@ -36,12 +46,16 @@ int main(){
         }
     }
 
-    // fibonacci
+    // fibonacci ...
     int nf;
     cin>>nf;
     fibonacci(nf);
 
-
+    // factorial ...
+    int nfac;
+    cin>>nfac;
+    int ans = fact(nfac);
+    cout<<ans;
 
     return 0;
 }
