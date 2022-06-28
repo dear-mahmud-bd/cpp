@@ -13,9 +13,9 @@ bool isPrime(int num){
     return true;
 }
 // fibonacci ...
-void fibonacci(int n){
+void fibonacci(int numb){
     int t1=0,t2=1,nextNum;
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i <= numb; i++)
     {
         cout<<t1<<" ";
         nextNum=t1+t2;
@@ -24,19 +24,22 @@ void fibonacci(int n){
     }
     return;
 }
-// factorial ...
+// factorial and nCr ...
 int fact(int number){
-    int mul=1;
+    int factorial=1;
     for (int i = 1; i <= number; i++)
     {
-        mul=mul*i;
+        factorial=factorial*i;
     }
-    return mul;
+    return factorial;
 }
+
+
 
 int main(){
     // Check Prime number ...
     int a,b;
+    cout<<"Prime number between two number : ";
     cin>>a>>b;
     cout<<endl;
     for (int i = a; i <= b; i++)
@@ -48,14 +51,24 @@ int main(){
 
     // fibonacci ...
     int nf;
+    cout<<"For Fibonacci : ";
     cin>>nf;
     fibonacci(nf);
+    cout<<endl;
 
     // factorial ...
     int nfac;
+    cout<<"For Factorial : ";
     cin>>nfac;
     int ans = fact(nfac);
-    cout<<ans;
+    cout<<ans<<endl;
+
+    // Calculate nCr ...
+    int n,r;
+    cout<<"For Calculate nCr : ";
+    cin>>n>>r;
+    int answer = fact(n)/fact(r)*fact(n-r);
+    cout<<answer<<endl;
 
     return 0;
 }
