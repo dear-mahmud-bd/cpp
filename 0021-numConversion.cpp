@@ -40,6 +40,28 @@ int decimalToBinary(int n3){
     return ans3;
 }
 
+// Decimal to Hexadecimal ...
+string decimalToHexadecimal(int n4){
+    int x4=1;
+    string ans4= "";
+    while (x4<=n4)
+        x4*=16;
+        x4/=16;
+    while (x4>0)
+    {
+        int lastDigit = n4/x4;
+        n4-=lastDigit*x4;
+        x4/=16;
+        if(lastDigit<=9){
+            ans4 = ans4+to_string(lastDigit);
+        }else{
+            char c='A'+lastDigit-10;
+            ans4.push_back(c);
+        }
+    }
+    return ans4;
+}
+
 int main(){
     // Binary to Decimal ...
     int n1;
@@ -62,5 +84,12 @@ int main(){
     cout<<"Binary Number is = ";
     cout<< decimalToBinary(n3)<<endl;
 
+    // Hexadecimal to Decimal ...
+    int n4;
+    cout<<"Enter Decimal Number : ";
+    cin>>n4;
+    cout<<"Hexadecimal Number is = ";
+    cout<< decimalToHexadecimal(n4)<<endl;
+    
     return 0;
 } 
