@@ -5,11 +5,9 @@ using namespace std;
 // Binary to Decimal ...
 int binaryToDecimal(int n1){
     int ans1=0,position=0,digit;
-    while (n1>0)
-    {
+    while (n1>0){
         digit=n1%10;
         ans1+=digit*pow(2,position);
-
         position++;
         n1/=10;
     }
@@ -30,6 +28,18 @@ int hexadecimalToDecimal(string n2){
     return ans2;
 }
 
+// Decimal to Binary ...
+int decimalToBinary(int n3){
+    int ans3=0,position3=0,digit3;
+    while(n3 != 0){
+        digit3=n3%2;
+        ans3+=digit3*pow(10,position3);
+        position3++;
+        n3/=2;
+    }
+    return ans3;
+}
+
 int main(){
     // Binary to Decimal ...
     int n1;
@@ -44,6 +54,13 @@ int main(){
     cin>>n2;
     cout<<"Decimal Number is = ";
     cout<< hexadecimalToDecimal(n2)<<endl;
+    
+    // Decimal to Binary ...
+    int n3;
+    cout<<"Enter Decimal Number : ";
+    cin>>n3;
+    cout<<"Binary Number is = ";
+    cout<< decimalToBinary(n3)<<endl;
 
     return 0;
 } 
