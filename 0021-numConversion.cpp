@@ -47,8 +47,7 @@ string decimalToHexadecimal(int n4){
     while (x4<=n4)
         x4*=16;
         x4/=16;
-    while (x4>0)
-    {
+    while (x4>0){
         int lastDigit = n4/x4;
         n4-=lastDigit*x4;
         x4/=16;
@@ -60,6 +59,68 @@ string decimalToHexadecimal(int n4){
         }
     }
     return ans4;
+}
+
+// Add two binary Number ...
+int addTwoBinaryNum(int bi1, int bi2){
+    int ans5 = 0, carry = 0, binaryAns = 0;
+    while (bi1>0 && bi2>0){
+        if(bi1%2==0 && bi2%2==0){
+            ans5 = ans5*10 + carry;
+            carry = 0;
+        }else if ((bi1%2==0 && bi2%2==1)||(bi1%2==1 && bi2%2==0)){
+            if(carry == 1){
+                ans5 = ans5*10 + 0;
+                carry = 1;
+            }else{
+                ans5 = ans5*10 + 1;
+                carry = 0;
+            }
+        }else{
+            ans5 = ans5*10 + carry;
+            carry = 1;
+        }
+        bi1 /= 10;
+        bi2 /= 10;
+    }
+    while (bi1 > 0){
+        if (carry == 1){
+            if(bi1%2 == 1){
+                ans5 = ans5 + 0;
+                carry = 1;
+            }else{
+                ans5 = ans5 + 1;
+                carry = 0;
+            }
+        }else{
+            ans5 = ans5*10 + (bi1%2);
+        }
+        bi1 /= 10;
+    }
+    while (bi2 > 0){
+        if (carry == 1){
+            if(bi2%2 == 1){
+                ans5 = ans5 + 0;
+                carry = 1;
+            }else{
+                ans5 = ans5 + 1;
+                carry = 0;
+            }
+        }else{
+            ans5 = ans5*10 + (bi2%2);
+        }
+        bi2 /= 10;
+    }
+    if (carry == 1){
+        ans5 = ans5*10 + 1;
+    }
+    // actual answer ...
+    while (ans5 > 0){
+        int lastNumber = ans5 % 10;
+        binaryAns = binaryAns*10 + lastNumber;
+        ans5 /= 10;
+    }
+    return binaryAns;
 }
 
 int main(){
@@ -84,12 +145,18 @@ int main(){
     cout<<"Binary Number is = ";
     cout<< decimalToBinary(n3)<<endl;
 
-    // Hexadecimal to Decimal ...
+    // Decimal to Hexadecimal ...
     int n4;
     cout<<"Enter Decimal Number : ";
     cin>>n4;
     cout<<"Hexadecimal Number is = ";
-    cout<< decimalToHexadecimal(n4)<<endl;
+    // cout<< decimalToHexadecimal(n4)<<endl;
+
+    // Adding two binary number ...
+    int bi1,bi2;
+    cout<<"Enter two binary number : ";
+    cin>>bi1>>bi2;
+    cout<< addTwoBinaryNum(bi1,bi2)<<endl;
     
     return 0;
 } 
