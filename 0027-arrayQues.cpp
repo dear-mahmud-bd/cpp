@@ -1,4 +1,4 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 int main(){
 
@@ -25,18 +25,41 @@ int main(){
     // // Sum of sub Array
     // int num;
     // cin>>num;
-    // int array[num];
+    // int arra[num];
     // for (int i = 0; i < num; i++){
-    //     cin>>array[i];
+    //     cin>>arra[i];
     // }
     // int currSum = 0;
     // for (int i = 0; i < num; i++){
     //     currSum = 0;
     //     for (int j = i; j < num; j++){
-    //         currSum += array[j];
+    //         currSum += arra[j];
     //         cout<< currSum << " ";
     //     }
     // }
+    
+    // Maximum Arethmetic SubArray Length ...
+    int number;
+    cin>>number;
+    int array[number];
+    for (int i = 0; i < number; i++){
+        cin>>array[i];
+    }
+    int ans = 2;
+    int previousCommonDiff = array[1]-array[0];
+    int j = 2;
+    int current = 2;
+    while (j<number){
+        if (previousCommonDiff == array[j]-array[j-1]){
+            current++;
+        }else{
+            previousCommonDiff = array[j]-array[j-1];
+            current=2;
+        }
+        ans = max(ans, current);
+        j++;
+    }
+    cout<<ans<<endl;
     
 
     return 0;
