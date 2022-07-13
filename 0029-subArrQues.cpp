@@ -36,28 +36,45 @@ int main(){
     // }
     // cout<<maxSum<<endl;
 
-    // max sub array sum ...-time O(n+ne2)
-    int n3;
-    cin>>n3;
-    int arr3[n3];
-    for (int i = 0; i < n3; i++){
-        cin>>arr3[i];
+    // // max sub array sum ...-time O(n+ne2)
+    // int n3;
+    // cin>>n3;
+    // int arr3[n3];
+    // for (int i = 0; i < n3; i++){
+    //     cin>>arr3[i];
+    // }
+    // int currSum[n3+1];
+    // currSum[0] = 0;
+    // for (int i = 1; i <= n3; i++){
+    //     currSum[i] = currSum[i-1] + arr3[i-1];
+    // }
+    // int maxSum = INT_MIN;
+    // for (int i = 1; i <= n3; i++){
+    //     int sum = 0;
+    //     for (int j = 0; j < i; j++){
+    //         sum = currSum[i] - currSum[j];
+    //         maxSum = max(maxSum,sum);
+    //     }
+    // }
+    // cout<<maxSum<<endl;
+
+    // max sub array sum ...-time O(n)
+    int n4;
+    cin>>n4;
+    int arr4[n4];
+    for (int i = 0; i < n4; i++){
+        cin>>arr4[i];
     }
-    int currSum[n3+1];
-    currSum[0] = 0;
-    for (int i = 1; i <= n3; i++){
-        currSum[i] = currSum[i-1] + arr3[i-1];
-    }
+    int currentSum = 0;
     int maxSum = INT_MIN;
-    for (int i = 1; i <= n3; i++){
-        int sum = 0;
-        for (int j = 0; j < i; j++){
-            sum = currSum[i] - currSum[j];
-            maxSum = max(maxSum,sum);
+    for (int i = 0; i < n4; i++){
+        currentSum += arr4[i];
+        if(currentSum < 0){
+            currentSum = 0;
         }
+        maxSum = max(maxSum, currentSum);
     }
     cout<<maxSum<<endl;
     
-
     return 0;
 }
