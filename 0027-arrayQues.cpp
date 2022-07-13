@@ -2,41 +2,43 @@
 using namespace std;
 int main(){
 
-    // // Max till i ...
-    // int n;
-    // cin>>n;
-    // int arr[n];
-    // for (int i = 0; i < n; i++){
-    //     cin>>arr[i];
-    // }
-    // int max=arr[0];
-    // for (int i = 0; i < n; i++){
-    //     if (arr[i] > max){
-    //         max = arr[i];
-    //         arr[i]=max;
-    //     }else{
-    //         arr[i]=max;
-    //     }
-    // }
-    // for (int i = 0; i < n; i++){
-    //     cout<<arr[i]<<" ";
-    // }
+    // Max till i ...
+    int n1;
+    cin>>n1;
+    int arr[n1];
+    for (int i = 0; i < n1; i++){
+        cin>>arr[i];
+    }
+    int hight=arr[0];
+    for (int i = 0; i < n1; i++){
+        if (arr[i] > hight){
+            hight = arr[i];
+            arr[i]=hight;
+        }else{
+            arr[i]=hight;
+        }
+    }
+    for (int i = 0; i < n1; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
 
-    // // Sum of sub Array
-    // int num;
-    // cin>>num;
-    // int arra[num];
-    // for (int i = 0; i < num; i++){
-    //     cin>>arra[i];
-    // }
-    // int currSum = 0;
-    // for (int i = 0; i < num; i++){
-    //     currSum = 0;
-    //     for (int j = i; j < num; j++){
-    //         currSum += arra[j];
-    //         cout<< currSum << " ";
-    //     }
-    // }
+    // Sum of sub Array
+    int num;
+    cin>>num;
+    int arra[num];
+    for (int i = 0; i < num; i++){
+        cin>>arra[i];
+    }
+    int currSum = 0;
+    for (int i = 0; i < num; i++){
+        currSum = 0;
+        for (int j = i; j < num; j++){
+            currSum += arra[j];
+            cout<< currSum << " ";
+        }
+        cout<<endl;
+    }
     
     // Maximum Arethmetic SubArray Length ...
     int number;
@@ -61,6 +63,27 @@ int main(){
     }
     cout<<ans<<endl;
     
+    //  Record Breaking Days ...
+    int n;
+    cin>>n;
+    int a[n+1];
+    a[n] = -1;
+    for (int i = 0; i < n; i++){
+        cin>>a[i];
+    }
+    if (n==1){
+        cout<<n<<endl;
+        return 0;
+    }
+    int mx = -1;
+    int answer = 0;
+    for (int i = 0; i < n; i++){
+        if (a[i]>mx && a[i]>a[i+1]){
+            answer++;
+        }
+        mx = max(mx, a[i]);
+    }
+    cout << answer << endl;
 
     return 0;
 }
